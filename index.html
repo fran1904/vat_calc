@@ -10,10 +10,10 @@
     <form action="return false">
 
         <h2>Select Add or Subtract VAT:</h2>
-        <input type="radio" id="add" name="selectFunctionality" value="add">
+        <input type="radio" id="add" name="functionality" value="add">
         <label for="male">Add VAT</label><br>
     
-        <input type="radio" id="subtract" name="selectFunctionality" value="subtract">
+        <input type="radio" id="subtract" name="functionality" value="subtract">
         <label for="female">Subtract VAT</label><br>
 
         <hr>
@@ -33,7 +33,7 @@
         <hr>  
     </form>
 
-    <button type="button" onclick="">Calculate</button>
+    <button type="button" onclick="calculate()">Calculate</button>
 
     <div class="result-box">
         <h2>Of which VAT: </h2>
@@ -46,7 +46,7 @@
 </body>
 <script>
 
-let functionalitySelected;   // store either "add" or "subtract"
+let selectedFunctionality;   // store either "add" or "subtract"
 let vatRate;                // store either 19 or 7
 let amountEntered;           // store user input
 
@@ -54,7 +54,24 @@ let vatAmount;              // store amountEntered + or - vatRate
 let amountPlusVat;          // amountEntered + vatAmount
 
 
+function calculate(){
+    event.preventDefault();
 
+    selectedFunctionality = document.querySelector('input[name="functionality"]:checked').value
+    vatRate = parseInt(document.querySelector('input[name="rate"]:checked').value)
+    amountEntered = parseFloat(document.getElementById('amount').value)
+
+    if(selectedFunctionality === 'add'){
+        addVat(){
+
+        }
+    }else{
+        subtractVat(){
+
+        }
+    }
+
+}
 
 
 
