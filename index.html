@@ -27,7 +27,7 @@
 
         <hr>    
         
-        <h2>Amount in Euro:</h2>
+        <h2 id="net-or-gross">Net Amount in Euro:</h2>
         <input type="number" id="amount" name="amount">
 
         <hr>  
@@ -37,10 +37,10 @@
 
     <div class="result-box">
         <h2>Of which VAT: </h2>
-        <p></p>
+        <p id="resultOutputOne"></p> 
         <hr>
-        <h2>Amount plus VAT:</h2>
-        <p></p>
+        <h2>Amount:</h2>
+        <p id="resultOutputTwo"></p>
     </div>
 
 </body>
@@ -49,38 +49,29 @@
 let selectedFunctionality;   // store either "add" or "subtract"
 let vatRate;                // store either 19 or 7
 let amountEntered;           // store user input
-
 let vatAmount;              // store amountEntered + or - vatRate
-let amountPlusVat;          // amountEntered + vatAmount
+let resultTotal;          // amountEntered + vatAmount
 
 
 function calculate(){
+
     event.preventDefault();
 
     selectedFunctionality = document.querySelector('input[name="functionality"]:checked').value
     vatRate = parseInt(document.querySelector('input[name="rate"]:checked').value)
     amountEntered = parseFloat(document.getElementById('amount').value)
 
-    if(selectedFunctionality === 'add'){
-        addVat(){
-
-        }
-    }else{
-        subtractVat(){
-
-        }
+    if(selectedFunctionality === 'add'){ 
+            vatAmount = (amountEntered * vatRate) / 100
+            resultTotal = amountEntered + vatAmount
+    }else{   
+                let x = vatRate / 100 + 1
+                resultTotal = amountEntered / x
+                vatAmount = (resultTotal * vatRate) / 100 
     }
 
+    document.getElementById('resultOutputOne').innerHTML = vatAmount
+    document.getElementById('resultOutputTwo').innerHTML = resultTotal
 }
-
-
-
-
-
-
-
-
-
-
 </script>
 </html>
