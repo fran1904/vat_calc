@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="return false">
+
+        <h2>Select Add or Subtract VAT:</h2>
+        <input type="radio" id="add" name="selectFunctionality" value="add">
+        <label for="male">Add VAT</label><br>
+    
+        <input type="radio" id="subtract" name="selectFunctionality" value="subtract">
+        <label for="female">Subtract VAT</label><br>
+
+        <hr>
+
+        <h2>Select Rate:</h2>
+        <input type="radio" id="rate" name="rate" value="19">
+        <label for="male">19%</label><br>
+    
+        <input type="radio" id="rate" name="rate" value="7">
+        <label for="female">7%</label><br>
+
+        <hr>    
+        
+        <h2>Amount in Euro:</h2>
+        <input type="number" id="amount" name="amount">
+
+        <hr>  
+    </form>
+
+    <button type="button" onclick="">Calculate</button>
+
+    <div class="result-box">
+        <h2>Of which VAT: </h2>
+        <p></p>
+        <hr>
+        <h2>Amount plus VAT:</h2>
+        <p></p>
+    </div>
+
+</body>
+<script>
+
+let functionalitySelected;   // store either "add" or "subtract"
+let vatRate;                // store either 19 or 7
+let amountEntered;           // store user input
+
+let vatAmount;              // store amountEntered + or - vatRate
+let amountPlusVat;          // amountEntered + vatAmount
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
